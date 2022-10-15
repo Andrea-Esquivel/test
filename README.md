@@ -29,14 +29,16 @@ Login successful as admin
 ### Descripción del caso de prueba
 Detalla qué se está probando, qué se está verificando y sobre qué unidad.
 
-~~~Ejemplo: 
+~~~
+Ejemplo: 
 Caso de prueba para verificar el correcto inicio de sesión de un usuario administrador, usando el email de su cuenta.
 ~~~
 
 ### Condiciones del caso de prueba
 Son las condiciones que se deben cumplir antes de la ejecución del caso de prueba.
 
-~~~Ejemplo:
+~~~
+Ejemplo:
 
 - Contar con las credenciales de un usuario administrador (email y contraseña)
 - Ingresar al home de empresas
@@ -46,7 +48,8 @@ Son las condiciones que se deben cumplir antes de la ejecución del caso de prue
 ### Datos de prueba
 Se relaciona con las variables y valores necesarios para el caso de prueba.
 
-~~~Ejemplo:
+~~~
+Ejemplo:
 
 | Nombre de variable  | Valor               |
 |---------------------|---------------------|
@@ -57,7 +60,8 @@ Se relaciona con las variables y valores necesarios para el caso de prueba.
 ### Pasos a ejecutar
 Serie de pasos para llevar a cabo el caso de prueba, con un enfoque en el usuario final.
 
-~~~Ejemplo:
+~~~
+Ejemplo:
 
 1. Ingresar en el campo `Usuario/Coreo electrónico` el valor de la variable `email`
 2. Ingresar en el campo `Contraseña` el valor de la variable `password`
@@ -69,14 +73,16 @@ Serie de pasos para llevar a cabo el caso de prueba, con un enfoque en el usuari
 ### Resultados esperados
 Esto indica el resultado esperado después de la ejecución de los pasos del caso de prueba.
 
-~~~Ejemplo:
+~~~
+diff Ejemplo:
 Se espera que el inicio de sesión sea exitoso.
 ~~~
 
 ### Condiciones posteriores
 Lo que se espera que suceda después de obtener el resultado de los pasos.
 
-~~~Ejemplo:
+~~~
+Ejemplo:
 - El usuario debe ser dirigido a la página del dashboard de empresas.
 - La cookie sessionR debe contener un valor.
 ~~~
