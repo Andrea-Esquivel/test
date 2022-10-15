@@ -9,7 +9,7 @@ Casos de prueba del Login
 ## Contenido
 * [Condiciones para ejecución de pruebas](#execution-conditions)
 * [Título(s) de caso de prueba](#test-one)
-* [Login successful as admin](#test-two)
+* [Ejemplo: Login successful as admin](#test-two)
 
 ## <a id="suite-conditions">Condiciones para ejecución de pruebas</a>
 
@@ -31,7 +31,7 @@ Ejemplo:
 Login successful as admin
 ~~~
 
-#### Descripción del caso de prueba
+#### Descripción
 ***
 Detalla qué se está probando, qué se está verificando y sobre qué unidad.
 
@@ -103,25 +103,21 @@ Ejemplo:
 
 ## <a id="test-two">Login successful as admin</a>
 
-#### Descripción del caso de prueba
-***
+#### Descripción
 Caso de prueba para verificar el correcto inicio de sesión de un usuario administrador, usando el email de su cuenta.
 
 #### Condiciones del caso de prueba
----
 - Contar con las credenciales de un usuario administrador (email y contraseña)
 - Ingresar al home de empresas
 - Dar clic en el botón con el texto "INICIA SESIÓN"
 
 #### Datos de prueba
----
 | Nombre de variable  | Valor               |
 |---------------------|---------------------|
 | email               | pruebas@getnada.com |
 | password            | pruebasQA1          |
 
 #### Pasos a ejecutar
----
 1. Ingresar en el campo `Usuario/Coreo electrónico` el valor de la variable `email`
 2. Ingresar en el campo `Contraseña` el valor de la variable `password`
 3. Dar clic en el botón `INICIAR SESIÓN`
@@ -129,10 +125,8 @@ Caso de prueba para verificar el correcto inicio de sesión de un usuario admini
 5. Hacer un request al servicio de autenticación
 
 #### Resultados esperados
----
 Se espera que el inicio de sesión sea exitoso.
 
 #### Condiciones posteriores
----
 - El usuario debe ser dirigido a la página del dashboard de empresas.
 - La cookie sessionR debe contener un valor.
