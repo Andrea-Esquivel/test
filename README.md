@@ -18,16 +18,19 @@
 
 ## <a id="test-one">Título de caso de prueba</a>
 El título de la prueba corresponde a un id descriptivo que permita responder dos preguntas: ¿Qué flujo se está probando? y ¿Cuál es el resultado esperado del caso de prueba? Este título puede ser una base para detenerminar los títulos del describe y el it de la prueba.
-`Ejemplo: Login successful as admin`
+
+**Ejemplo:** Login successful as admin
 
 ### Descripción del caso de prueba
 Detalla qué se está probando, qué se está verificando y sobre qué unidad.
-`Ejemplo: Caso de prueba para verificar el correcto inicio de sesión de un usuario administrador, usando el email de su cuenta.`
+
+**Ejemplo:** Caso de prueba para verificar el correcto inicio de sesión de un usuario administrador, usando el email de su cuenta.
 
 ### Condiciones del caso de prueba
 Son las condiciones que se deben cumplir antes de la ejecución del caso de prueba.
 
-Ejemplo:
+**Ejemplo:**
+
 - Contar con las credenciales de un usuario administrador (email y contraseña)
 - Ingresar al home de empresas
 - Dar clic en el botón con el texto "INICIA SESIÓN"
@@ -35,7 +38,7 @@ Ejemplo:
 ### Datos de prueba
 Se relaciona con las variables y valores necesarios para el caso de prueba.
 
-Ejemplo:
+**Ejemplo:**
 
 | Nombre de variable  | Valor               |
 |---------------------|---------------------|
@@ -45,7 +48,7 @@ Ejemplo:
 ### Pasos a ejecutar
 Pasos a ejecutar para llevar a cabo el caso de prueba, con un enfoque en el usuario final.
 
-Ejemplo: 
+**Ejemplo:** 
 
 1. Ingresar en el campo `Usuario/Coreo electrónico` el valor de la variable `email`
 2. Ingresar en el campo `Contraseña` el valor de la variable `password`
@@ -55,11 +58,15 @@ Ejemplo:
 
 ### Resultados esperados
 Esto indica el resultado esperado después de la ejecución de los pasos del caso de prueba.
-`Ejemplo: Se espera que el inicio de sesión sea exitoso.`
+
+**Ejemplo:** Se espera que el inicio de sesión sea exitoso.
 
 ### Condiciones posteriores
 Lo que se espera que suceda después de obtener el resultado de los pasos.
-`Ejemplo: El usuario debe ser dirigido a la página del dashboard de empresas, la cookie debe existir.`
+
+**Ejemplo:**
+- El usuario debe ser dirigido a la página del dashboard de empresas.
+- La cookie sessionR debe contener un valor.
 
 ### Análisis de resultados
 ¿Qué determina que el resultado sea satisfactorio o no?
