@@ -1,5 +1,5 @@
 # Plantilla para casos de prueba
-Debe llevar el nombre del flujo que se está probando.
+Se recomienda incluir en el nombre del archivo el flujo que se desea probar.
 ~~~
 Ejemplo:
 
