@@ -9,7 +9,7 @@ Casos de prueba del Login
 ## Contenido
 * [Condiciones para ejecución de pruebas](#execution-conditions)
 * [Título(s) de caso de prueba](#test-one)
-* [Título(s) de caso de prueba](#test-two)
+* [Login successful as admin](#test-two)
 
 ## <a id="suite-conditions">Condiciones para ejecución de pruebas</a>
 
@@ -101,13 +101,7 @@ Ejemplo:
 - La cookie sessionR debe contener un valor.
 ~~~
 
-## <a id="test-two">Título de caso de prueba</a>
-El título de la prueba corresponde a un id descriptivo que permita responder dos preguntas: ¿Qué flujo se está probando? y ¿Cuál es el resultado esperado del caso de prueba? Este título puede ser una base para detenerminar los nombres del describe y el it de la prueba.
-~~~
-Ejemplo:
-
-Login successful as admin
-~~~
+## <a id="test-two">Login successful as admin</a>
 
 #### Descripción del caso de prueba
 ***
