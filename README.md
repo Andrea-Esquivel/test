@@ -30,7 +30,7 @@ Ejemplo:
 Login successful as admin
 ~~~
 
-### Descripción del caso de prueba
+#### Descripción del caso de prueba
 Detalla qué se está probando, qué se está verificando y sobre qué unidad.
 
 ~~~
@@ -39,7 +39,7 @@ Ejemplo:
 Caso de prueba para verificar el correcto inicio de sesión de un usuario administrador, usando el email de su cuenta.
 ~~~
 
-### Condiciones del caso de prueba
+#### Condiciones del caso de prueba
 Son las condiciones que se deben cumplir antes de la ejecución del caso de prueba.
 
 ~~~
@@ -50,7 +50,7 @@ Ejemplo:
 - Dar clic en el botón con el texto "INICIA SESIÓN"
 ~~~
 
-### Datos de prueba
+#### Datos de prueba
 Se relaciona con las variables y valores necesarios para el caso de prueba.
 
 ~~~
@@ -62,7 +62,7 @@ Ejemplo:
 | password            | pruebasQA1          |
 ~~~
 
-### Pasos a ejecutar
+#### Pasos a ejecutar
 Serie de pasos para llevar a cabo el caso de prueba, con un enfoque en el usuario final.
 
 ~~~
@@ -75,7 +75,7 @@ Ejemplo:
 5. Hacer un request al servicio de autenticación
 ~~~
 
-### Resultados esperados
+#### Resultados esperados
 Esto indica el resultado esperado después de la ejecución de los pasos del caso de prueba.
 
 ~~~
@@ -84,7 +84,7 @@ Ejemplo:
 Se espera que el inicio de sesión sea exitoso.
 ~~~
 
-### Condiciones posteriores
+#### Condiciones posteriores
 Lo que se espera que suceda después de obtener el resultado de los pasos.
 
 ~~~
