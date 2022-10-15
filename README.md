@@ -21,16 +21,18 @@ Ejemplo: Casos de prueba del Login
 
 ## <a id="test-one">Título de caso de prueba</a>
 El título de la prueba corresponde a un id descriptivo que permita responder dos preguntas: ¿Qué flujo se está probando? y ¿Cuál es el resultado esperado del caso de prueba? Este título puede ser una base para detenerminar los nombres del describe y el it de la prueba.
+~~~
+Ejemplo:
 
- <strong>Ejemplo:</strong>
- Login successful as admin
-
+Login successful as admin
+~~~
 
 ### Descripción del caso de prueba
 Detalla qué se está probando, qué se está verificando y sobre qué unidad.
 
 ~~~
-Ejemplo: 
+Ejemplo:
+
 Caso de prueba para verificar el correcto inicio de sesión de un usuario administrador, usando el email de su cuenta.
 ~~~
 
@@ -74,7 +76,8 @@ Ejemplo:
 Esto indica el resultado esperado después de la ejecución de los pasos del caso de prueba.
 
 ~~~
-diff Ejemplo:
+Ejemplo:
+
 Se espera que el inicio de sesión sea exitoso.
 ~~~
 
@@ -83,6 +86,7 @@ Lo que se espera que suceda después de obtener el resultado de los pasos.
 
 ~~~
 Ejemplo:
+
 - El usuario debe ser dirigido a la página del dashboard de empresas.
 - La cookie sessionR debe contener un valor.
 ~~~
