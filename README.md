@@ -1,7 +1,10 @@
 # Plantilla para casos de prueba
 Debe llevar el nombre del flujo que se está probando.
+~~~
+Ejemplo:
 
-Ejemplo: Casos de prueba del Login
+Casos de prueba del Login
+~~~
 
 ## Contenido
 * [Condiciones para ejecución de pruebas](#execution-conditions)
