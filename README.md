@@ -9,6 +9,7 @@ Casos de prueba del Login
 ## Contenido
 * [Condiciones para ejecución de pruebas](#execution-conditions)
 * [Título(s) de caso de prueba](#test-one)
+* [Título(s) de caso de prueba](#test-two)
 
 ## <a id="suite-conditions">Condiciones para ejecución de pruebas</a>
 
@@ -31,7 +32,7 @@ Login successful as admin
 ~~~
 
 #### Descripción del caso de prueba
----
+***
 Detalla qué se está probando, qué se está verificando y sobre qué unidad.
 
 ~~~
@@ -99,3 +100,45 @@ Ejemplo:
 - El usuario debe ser dirigido a la página del dashboard de empresas.
 - La cookie sessionR debe contener un valor.
 ~~~
+
+## <a id="test-two">Título de caso de prueba</a>
+El título de la prueba corresponde a un id descriptivo que permita responder dos preguntas: ¿Qué flujo se está probando? y ¿Cuál es el resultado esperado del caso de prueba? Este título puede ser una base para detenerminar los nombres del describe y el it de la prueba.
+~~~
+Ejemplo:
+
+Login successful as admin
+~~~
+
+#### Descripción del caso de prueba
+***
+Caso de prueba para verificar el correcto inicio de sesión de un usuario administrador, usando el email de su cuenta.
+
+#### Condiciones del caso de prueba
+---
+- Contar con las credenciales de un usuario administrador (email y contraseña)
+- Ingresar al home de empresas
+- Dar clic en el botón con el texto "INICIA SESIÓN"
+
+#### Datos de prueba
+---
+| Nombre de variable  | Valor               |
+|---------------------|---------------------|
+| email               | pruebas@getnada.com |
+| password            | pruebasQA1          |
+
+#### Pasos a ejecutar
+---
+1. Ingresar en el campo `Usuario/Coreo electrónico` el valor de la variable `email`
+2. Ingresar en el campo `Contraseña` el valor de la variable `password`
+3. Dar clic en el botón `INICIAR SESIÓN`
+4. Interceptar la petición al servicio `/api` esperando un resultado 200
+5. Hacer un request al servicio de autenticación
+
+#### Resultados esperados
+---
+Se espera que el inicio de sesión sea exitoso.
+
+#### Condiciones posteriores
+---
+- El usuario debe ser dirigido a la página del dashboard de empresas.
+- La cookie sessionR debe contener un valor.
