@@ -8,8 +8,8 @@ Casos de prueba del Login
 
 ## Contenido
 * [Condiciones para ejecución de pruebas](#execution-conditions)
-* [Caso de prueba](#test-case)
-* [Ejemplo: Casos de prueba del login](#example)
+* [Contenido de un caso de prueba](#test-case)
+* [Ejemplo completo: Casos de prueba del login](#example)
 
 ## <a id="suite-conditions">Condiciones para ejecución de pruebas</a>
 
@@ -101,9 +101,7 @@ Ejemplo:
 - La cookie sessionR debe contener un valor.
 ~~~
 
-**NOTA:** Propuesta de [formato](#example)
-
-
+**Nota:** Se recomienda incluir imágenes del resultado esperado, para mostrar una mayor claridad.
 
 # <a id="example">Casos de prueba del login</a>
 
@@ -154,3 +152,5 @@ Se espera que el inicio de sesión sea exitoso.
 ### **Condiciones posteriores:**
 - El usuario debe ser dirigido a la página del dashboard de empresas.
 - La cookie sessionR debe contener un valor.
+
+![Login exitoso](/Images/Success-Login.JPG)
