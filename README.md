@@ -1,6 +1,6 @@
 # Login test cases
 
-##📋 Contents
+## 📋 Contents
 * [Conditions for execution of tests](#conditions)
 * [Login successful with xmx](#login-xmx)
 * [Login successful with email](#login-email)
