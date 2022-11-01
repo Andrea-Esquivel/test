@@ -4,7 +4,7 @@
 * [Conditions for execution of tests](#conditions)
 * [Login successful with xmx](#login-xmx)
 * [Login successful with email](#login-email)
-* [Login with unregistred email](#login-unregistred-email)
+* [Login with incorrect credentials](#login-incorrect-credentials)
 * [Login with invalid email format](#login-invalid-email)
 * [Login with incorrect password](#login-incorrect-pass)
 * [Token refresh successful](#refresh-successful)
@@ -24,8 +24,7 @@
 | Etiqueta(s) de prueba   |                                   |
 | Interfaz gráfica        |                                   |
 
-## <a id="login-xmx">🔐 Login with xmx</a>
-**`Flujo crítico`**
+## <a id="login-xmx">🔐 Login with xmx</a> **`Flujo crítico`**
 
 ### **Descripción:**
 Caso de prueba para verificar el correcto inicio de sesión de un usuario relutador, usando el xmx de su cuenta.
