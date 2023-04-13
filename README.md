@@ -1,167 +1,59 @@
-# Login test cases
+# Test plan
 
-## 📋 Contents
-* [Conditions for execution of tests](#conditions)
-* [Login successful with xmx](#login-xmx)
-* [Login successful with email](#login-email)
-* [Login with incorrect credentials](#login-incorrect-credentials)
+## Test process
 
-## <a id="conditions">✅ Conditions for execution of tests</a>
+El proceso de prueba se realizará de la siguiente manera: Una vez completados todos los elementos que componen el software, se llevará a cabo una etapa de pruebas en ambiente de desarrollo; una vez resuletas las posibles incidencias, se realizará el pase del proyecto a ambiente productivo, seguido una nueva serie de pruebas en este ambiente y por último, se mantendrá el monitoreo constante de los nuevos flujos mediante pruebas aitomatizadas. 
 
-| Condición de ejecución  | Valor de ejecución                                   |
-|-------------------------|------------------------------------------------------|
-| Navegadores             | Chrome                                               |
-| Frecuencia de ejecución |                                                      |
-| Grabación de video      | Sí                                                   |
-| Número de reintentos    | `Flujos críticos`: 2  `Flujo secundario:` 1          |
-| Etiqueta(s) de prueba   | `Inicio de sesión` `Flujo crítico`/`Flujo secundario`|
-| Interfaz gráfica        | Sí                                                   |
+## Types of tests
 
-## <a id="login-xmx">🔐 Login with xmx</a>  **`Flujo crítico`**
+Los tipos de pruebas que se llevarán a cabo durante este proyecto, así como los detalles de las mismas, se listan a continuación:
 
-### **Descripción:**
-Caso de prueba para verificar el inicio de sesión exitoso de un usuario relutador, usando el xmx y tomando en cuenta un flujo completo, el cual incluye las siguientes acciones: verificar el refresh del token, redirección del home al dashboard (con sesión activa) y el logout.
+* **`PRUEBAS AUTOMATIZADAS (E2E):`** Se ejecutarán a partir de la liberación del proyecto en ambiente productivo, de Lunes a Viernes, de 8 am a 6:00 pm, cada media hora. Las pruebas abarcan los flujos de creación de vacante en base a una plantilla y creación de vacante desde cero (pruebas end to end).
+* **`PRUEBAS DE REGRESIÓN:`** Se ejecutarán postiormente a la liberación del software, en ambiente de desarrollo y ambiente productivo; con la finalidda de verificar que los procesos que forman parte del administrador de vacantes no se vean aletradas con la integración de la nueva funcionalidad. 
+* **`PRUEBAS FUNCIONALES Y DE ACEPTACIÓN:`** Se ejecutarán posteriormente a la liberación del software en ambiente de desarrollo y en ambiente productivo; esto con el objetivo de verificar el funcionamiento de las nuevas funcionalidades agregadas en el administrador de vacantes (nueva vacante desde plantilla).
 
-### **Condiciones del caso de prueba:**
-- Contar con las credenciales de un usuario reclutador (xmx y contraseña)
-- Ingresar al home de empresas
-- Dar clic en el botón "INICIA SESIÓN"
+## Testing tools
 
-### **Datos de prueba:**
-| Nombre de variable  | Valor               |
-|---------------------|---------------------|
-| xmx                 | xmxpruebas78x       |
-| password            | pruebasQA1          |
+Entre las herramientas que se usarán para la ejecución de pruebas, se encuentran:
 
-### **Pasos a ejecutar:**
+* **`Cypress:`** Permite ejecutar las pruebas automatizadas de manera periódica y hacer un registro del histórico en el dashboard de la herramienta.
+* **`Navegador:`** Permite replicar el comportamiento de los usuarios ingresando a la plataforma de OCC Mundial.
+* **`Registro del resultado de pruebas:`** Documento para almacenar los resultados de las pruebas efectuados, tanto en ambiente de desarrollo como en ambiente productivo.
 
-| Pasos                                                                               | Tiempo de espera    |
-|-------------------------------------------------------------------------------------|---------------------|
-| 1. Verificar que el texto `Ingresa como reclutador` se encuentre visible            | Default             |
-| 2. Verificar que la url del login cuente con el parámetro `challenge`               |                     |
-| 3. Escribir en el campo `Correo electrónico/usuario` el valor de la variable `xmx`  | Default             |
-| 4. Dar clic en el botón `CONTINUAR`                                                 |                     |
-| 5. Interceptar la petición `/api/userVerification` esperando un 200 en el body      |                     |
-| 6. Verificar que el campo `Contraseña` se encuentra visible                         |                     |
-| 7. Escribir en el campo `Contraseña` el valor de la variable `password`             |                     |
-| 8. Dar clic en el botón `INICIAR SESIÓN`                                            |                     |
-| 9. Interceptar la petición `/api/oauthLogin` esperando un 200 en el body            |                     |
-| 10. Request a `Hydra` para comprobar disponibilidad (en caso de falla del paso 9)   |                     |
-| 11. Request al `iam` esperando una respuesta correcta (en caso de falla del paso 9) |                     |
-| 12. Request para obtener el `tokenInterchange` (en caso de falla del paso 9)        |                     |
-| 13. Verificar la redirección al dashboard de empresas                               |                     |
-| 14. Verificar que el JWT contenga el campo `rid` y tenga una expiración correcta    |                     |
-| 15. Verificar que las cookies `sr` y `occidr11` existan                             |                     |
-| 16. Interpectar la petición `/api/refresh` esperando un status 200                  |                     |
-| 17. Ir al home de empresas, esperando que el flujo redirija al dashboard            |                     |
-| 18. Dar clic en el menú del usuario                                                 |                     |
-| 19. Dar clic en cerrar sesión                                                       |                     |
+## Test cases
 
-### **Resultados esperados:**
-Se espera que el inicio y el cierre de sesión sean exitosos.
+### Caso de prueba - Administrador de vacantes `PRUEBAS DE REGRESIÓN`
 
-### **Condiciones posteriores:**
-- El usuario debe ser dirigido a la página del home de empresas.
-- Al dar clic en el botón `INICIA SESIÓN` debe redirigir al formulario del login.
-- No deben existir las cookies de sesión (`sr` y `occidr11`).
+**Escenario de prueba:** Ambiente productivo, ambiente de desarrollo
 
-## <a id="login-email">🔐 Login with email</a>  **`Flujo crítico`**
+**Descripción:** Caso de prueba para verificar el correcto funcionamiento del administrador de vacantes, el cual abarca las siguientes acciones: Carga de vacantes, creación de una nueva vacante desde cero, edición de vacante, Compartir, autorepublicar, republicar, desactivar y eliminar.
 
-### **Descripción:**
-Caso de prueba para verificar el inicio de sesión exitoso de un usuario relutador, usando el email de su cuenta y después de 10 minutos de inactividad en el formulario de inicio de sesión.
+**Condiciones anteriores a la prueba**
+* Contar con una cuenta que tenga créditos de publicación de vacantes.
 
-### **Condiciones del caso de prueba:**
-- Contar con las credenciales de un usuario reclutador (email y contraseña)
-- Ingresar al home de empresas
-- Dar clic en el botón "INICIA SESIÓN"
+**Pasos de la prueba**
 
-### **Datos de prueba:**
-| Nombre de variable  | Valor               |
-|---------------------|---------------------|
-| email               |                     |
-| password            | pruebasQA1          |
+| Pasos                                                                                             |
+|---------------------------------------------------------------------------------------------------|
+| 1. Se inicia sesión con las credenciales correspondientes a la cuenta con créditos disponibles    |
+| 2. Ingresar a la sección de `VACANTES`                                                            |
+| 3. Verificar la carga correcta de las vacantes `publicadas, inactivas, expiradas y borradores`    |
+| 4. Crear una nueva vacante desde cero, revisando que se tengan que llenar todos los datos         |
+| 5. Editar la vacante recién creada y publicarla revisando que el id sea el mismo                  |
+| 6. Compartir la vacante publicada, verificando que el link permita ver correctamente la oferta    |
+| 7. Programar la autorepublicación de la vacante recién creada                                     |
+| 8. Republicar una vacante ya existente, siguiendo el proceso de edición y comprobando la vigencia |
+| 9. Desactivar la vacante recién creada, verificando que se encuentre en la sección `Inactivas`    |
+| 10. Eliminar la vacante recién creada, verificando que no aparezca en ninguna de las secciones    |
 
-### **Pasos a ejecutar:**
+**Criterios de aceptación**
+* Se espera que se cumplan de manera correcta todos los pasos detallados anteriormente.
+* Se espera que la vacante creada en esta prueba ya no exista.
 
-| Pasos                                                                               | Tiempo de espera    |
-|-------------------------------------------------------------------------------------|---------------------|
-| 1. Verificar que el texto `Ingresa como reclutador` se encuentre visible            | Default             |
-| 2. Verificar que la url del login cuente con el parámetro `challenge`               |                     |
-| 3. Esperar 10 minutos en inactividad                                                |                     |
-| 4. Escribir en el campo `Correo electrónico/usuario` el valor de la variable `email`| Default             |
-| 5. Dar clic en el botón `CONTINUAR`                                                 |                     |
-| 6. Interceptar la petición `/api/oauthLogin` esperando un 200 en el body            |                     |
-| 7. Request a `Hydra` para comprobar disponibilidad (en caso de falla del paso 9)    |                     |
-| 8. Request al `iam` esperando una respuesta correcta (en caso de falla del paso 9)  |                     |
-| 9. Request para obtener el `tokenInterchange` (en caso de falla del paso 9)         |                     |
+### Caso de pruebas automatizadas `PRUEBAS E2E`
 
-### **Resultados esperados:**
-Se espera que el inicio de sesión sea exitoso.
+Para consultar la cocumentación de las pruebas automatizadas, haga [clic aquí](https://backstage.occdeep.io/docs/default/Component/recruiters-integration-test/Casos%20de%20prueba%20-%20CAJA/)
 
-### **Condiciones posteriores:**
-- El usuario debe ser dirigido a la página del dashboard de empresas.
-- La cookie sr debe contener el token JWT con el campo rid y una fecha de expiración válida.
+## Document test results
 
-## <a id="login-incorrect-credentials">🔒 Login with incorrect credentials</a>  **`Flujo secundario`**
-
-### **Descripción:**
-Caso de prueba para verificar que al ingresar las credenciales incorrectas, el flujo impida el inicio de sesión. Entre las consideraciones de credenciales se encuentran: Email no registrado, email con formato inválido, password incorrecto y credenciales de candidato.
-
-### **Condiciones del caso de prueba:**
-- Contar con un email no registrado en occ empresas.
-- Contar con un email que se encuentre registrado pero de formato inválido.
-- Contar con un email válido y una contraseña incorrecta.
-- Contar con credenciales de candidato.
-- Ingresar al home de empresas
-- Dar clic en el botón "INICIA SESIÓN"
-
-### **Datos de prueba:**
-| Nombre de variable  | Valor                        |
-|---------------------|------------------------------|
-| unregistered-email  | pruebas.mictlan001@gmail.com |
-| invalid-email       | mabocu@getnada               |
-| registered-email    | mabocu@getnada.com           |
-| incorrect-password  | Test12345                    |
-| candys-email        | glendag2026@gmail.com        |
-| candys-password     | Glenda20                     |
-
-### **Pasos a ejecutar:**
-
-| Pasos                                                                               | Tiempo de espera    |
-|-------------------------------------------------------------------------------------|---------------------|
-| 1. Verificar que el texto `Ingresa como reclutador` se encuentre visible            | Default             |
-| 2. Verificar que la url del login cuente con el parámetro `challenge`               |                     |
-| 3. Escribir en el campo `Correo electrónico/usuario` el valor `unregistered-email`  | Default             |
-| 4. Dar clic en el botón `CONTINUAR`                                                 |                     |
-| 5. Interceptar la petición `/api/userVerification` esperando que devuelva error 404 |                     |
-| 6. Verificar el texto `No hay una cuenta vinculada con este usuario` esté visible   |                     |
-| 7. Verificar que el botón `CONTINUAR` se encuentre deshabilitado                    |                     |
-| 8. Dar clic en el botón `X` del campo `Correo electrónico/usuario`                  |                     |
-| 9. Escribir en el campo `Correo electrónico/usuario` el valor `invalid-email`       |                     |
-| 10. Dar clic en el botón `CONTINUAR`                                                |                     |
-| 11. Interceptar la petición `/api/userVerification` esperando que devuelva error 404|                     |
-| 12. Verificar el texto `No hay una cuenta vinculada con este usuario` esté visible  |                     |
-| 13. Verificar que el botón `CONTINUAR` se encuentre deshabilitado                   |                     |
-| 14. Dar clic en el botón `X` del campo `Correo electrónico/usuario`                 |                     |
-| 15. Escribir en el campo `Correo electrónico/usuario` el valor `registered-email`   | Default             |
-| 16. Interceptar la petición `/api/userVerification` esperando que devuelva un 200   |                     |
-| 17. Verificar que el campo `Contraseña` se encuentra visible                        |                     |
-| 18. Escribir en el campo `Contraseña` el valor de la variable `incorrect-password`  |                     |
-| 19. Dar clic en el botón `INICIAR SESIÓN`                                           |                     |
-| 20. Interceptar la petición `/api/oauthLogin` esperando un error 401                |                     |
-| 21. Dar clic en el botón `X` del campo `Correo electrónico/usuario`                 |                     |
-| 22. Escribir en el campo `Correo electrónico/usuario` el valor `candys-email`       |                     |
-| 23. Interceptar la petición `/api/userVerification` esperando que devuelva un 200   |                     |
-| 24. Verificar que el campo `Contraseña` se encuentra visible                        |                     |
-| 25. Escribir en el campo `Contraseña` el valor de la variable `candys-password`     |                     |
-| 26. Dar clic en el botón `INICIAR SESIÓN`                                           |                     |
-| 27. Interceptar la petición `/api/oauthLogin` esperando un error 401                |                     |
-| 28. Verificar el texto `Por tu seguridad la liga anterior ha expirado, favor de...` |                     |
-
-### **Resultados esperados:**
-Se espera que no se permita iniciar sesión.
-
-### **Condiciones posteriores:**
-- El usuario debe permanecer en la misma pantalla de autenticación.
-- No deben existir las cookies `sr` y `occidr11`.
-- El campo de constraseña y el botón de INICIAR SESIÓN debe mantenerse ocultos.
+Para documentar los resultados de las pruebas realizadas, ingresar al siguiente [documento]()
