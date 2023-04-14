@@ -4,15 +4,15 @@
 
 El proceso de ejecución de pruebas se planea de la siguiente manera:
 * Una vez completados todos los elementos que conforman el software, se llevará a cabo una etapa de pruebas en ambiente de desarrollo.
-* Una vez resuletas las posibles incidencias en ambiente de desarrollo, se realizará el pase del proyecto a ambiente productivo.
+* Se resolverán las posibles incidencias detectadas en ambiente de desarrollo y se realizará la liberación del proyecto a ambiente productivo.
 * En ambiente productivo, se ejecutará una nueva serie de pruebas para garantizar la funcionalidad del software.
-* Una vez probado el sofware y determinando que se cumple con los criterios de aceptación, se mantendrán los cambios en ambiente productivo, al igual que el monitoreo constante mediante pruebas aitomatizadas.
+* Una vez probado el sofware y determinando que cumple con los criterios de aceptación, se mantendrán los cambios en ambiente productivo; al igual que el monitoreo constante de estos, mediante pruebas e2e.
 
 ## 📊 Types of tests
 
 Los tipos de pruebas que se llevarán a cabo durante este proyecto, así como los detalles de las mismas, se listan a continuación:
 
-* **`PRUEBAS AUTOMATIZADAS (E2E):`** Se ejecutarán a partir de la liberación del proyecto, en ambiente productivo, de Lunes  a Viernes, de 8 am a 6:00 pm, cada media hora. Estas pruebas tienen la finalidad de mantener un monitoreo constante de los nuevos flujos.
+* **`PRUEBAS AUTOMATIZADAS (E2E):`** Se ejecutarán a partir de la liberación del proyecto, en ambiente productivo, de Lunes  a Viernes, de 8 am a 6:00 pm, cada media hora. Estas pruebas tienen la finalidad de mantener un monitoreo constante de los nuevos flujos recién agregados.
 * **`PRUEBAS DE REGRESIÓN:`** Se ejecutarán posteriormente a la liberación del software en ambiente de desarrollo y ambiente productivo; con la finalidad de verificar que los procesos del administrador de vacantes no se vean alterados con la integración de la nueva funcionalidad en el sistema.
 * **`PRUEBAS FUNCIONALES Y DE ACEPTACIÓN:`** Se ejecutarán posteriormente a la liberación del software en ambiente de desarrollo y en ambiente productivo; esto con el objetivo de verificar el funcionamiento del nuevo flujo agregado en el administrador de vacantes (nueva vacante en base a una plantilla).
 
