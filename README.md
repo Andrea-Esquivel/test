@@ -1,18 +1,18 @@
-# Test plan
+# 🔍Test plan
 
-## Test process
+## 📋Test process
 
 El proceso de prueba se realizará de la siguiente manera: Una vez completados todos los elementos que componen el software, se llevará a cabo una etapa de pruebas en ambiente de desarrollo; una vez resuletas las posibles incidencias, se realizará el pase del proyecto a ambiente productivo, seguido una nueva serie de pruebas en este ambiente y por último, se mantendrá el monitoreo constante de los nuevos flujos mediante pruebas aitomatizadas. 
 
-## Types of tests
+## 📊 Types of tests
 
 Los tipos de pruebas que se llevarán a cabo durante este proyecto, así como los detalles de las mismas, se listan a continuación:
 
-* **`PRUEBAS AUTOMATIZADAS (E2E):`** Se ejecutarán a partir de la liberación del proyecto en ambiente productivo, de Lunes a Viernes, de 8 am a 6:00 pm, cada media hora. Las pruebas abarcan los flujos de creación de vacante en base a una plantilla y creación de vacante desde cero (pruebas end to end).
+* **`PRUEBAS AUTOMATIZADAS (E2E):`** Se ejecutarán a partir de la liberación del proyecto en ambiente productivo, de Lunes  a Viernes, de 8 am a 6:00 pm, cada media hora. Las pruebas abarcan los flujos de creación de vacante en base a una plantilla y creación de vacante desde cero (pruebas end to end).
 * **`PRUEBAS DE REGRESIÓN:`** Se ejecutarán postiormente a la liberación del software, en ambiente de desarrollo y ambiente productivo; con la finalidda de verificar que los procesos que forman parte del administrador de vacantes no se vean aletradas con la integración de la nueva funcionalidad. 
 * **`PRUEBAS FUNCIONALES Y DE ACEPTACIÓN:`** Se ejecutarán posteriormente a la liberación del software en ambiente de desarrollo y en ambiente productivo; esto con el objetivo de verificar el funcionamiento de las nuevas funcionalidades agregadas en el administrador de vacantes (nueva vacante desde plantilla).
 
-## Testing tools
+## 🛠Testing tools
 
 Entre las herramientas que se usarán para la ejecución de pruebas, se encuentran:
 
@@ -20,7 +20,7 @@ Entre las herramientas que se usarán para la ejecución de pruebas, se encuentr
 * **`Navegador:`** Permite replicar el comportamiento de los usuarios ingresando a la plataforma de OCC Mundial.
 * **`Registro del resultado de pruebas:`** Documento para almacenar los resultados de las pruebas efectuados, tanto en ambiente de desarrollo como en ambiente productivo.
 
-## Test cases
+## 🔍Test cases
 
 ### Caso de prueba - Administrador de vacantes `PRUEBAS DE REGRESIÓN`
 
