@@ -1,94 +1,123 @@
-# 🔍Test plan
+# Implementation Specification Document 
 
-## 📋Test process
+## Introduction 
 
-El proceso de ejecución de pruebas se planea de la siguiente manera:
-* Una vez completados todos los elementos que conforman el software, se llevará a cabo una etapa de pruebas en ambiente de desarrollo.
-* Se resolverán las posibles incidencias detectadas en ambiente de desarrollo y se realizará la liberación del proyecto a ambiente productivo.
-* En ambiente productivo, se ejecutará una nueva serie de pruebas para garantizar la funcionalidad del software.
-* Una vez probado el sofware y determinando que cumple con los criterios de aceptación, se mantendrán los cambios en ambiente productivo; al igual que el monitoreo constante de estos, mediante pruebas e2e.
+This document provides a detailed plan for implementing the process of creating a new vacancy through the selection of a template. Its purpose is to provide clear guidelines for the engineering department and project team members responsible for implementing the proposed solution. 
 
-## 📊 Types of tests
+## Implementation Scope 
 
-Los tipos de pruebas que se llevarán a cabo durante este proyecto, así como los detalles de las mismas, se listan a continuación:
+The implementation will involve adding a template system to the  vacancy creation process. This involves creating a new screen and modifying the vacancy creation screen to pre-load data from the selected template, allowing users to choose between creating a new vacancy from scratch or using one of the eleven most recently created vacancies as a template; including the creation of a API to obtain the latest vacancies. 
 
-* **`PRUEBAS AUTOMATIZADAS (E2E):`** Se ejecutarán a partir de la liberación del proyecto, en ambiente productivo, de Lunes  a Viernes, de 8 am a 6:00 pm, cada media hora. Estas pruebas tienen la finalidad de mantener un monitoreo constante de los nuevos flujos recién agregados.
-* **`PRUEBAS DE REGRESIÓN:`** Se ejecutarán posteriormente a la liberación del software en ambiente de desarrollo y ambiente productivo; con la finalidad de verificar que los procesos del administrador de vacantes no se vean alterados con la integración de la nueva funcionalidad en el sistema.
-* **`PRUEBAS FUNCIONALES Y DE ACEPTACIÓN:`** Se ejecutarán posteriormente a la liberación del software en ambiente de desarrollo y en ambiente productivo; esto con el objetivo de verificar el funcionamiento del nuevo flujo agregado en el administrador de vacantes (nueva vacante en base a una plantilla).
+## Implementation Plan 
 
-## 🛠Testing tools
+The following steps will be taken to implement the proposed solution: 
 
-Entre las herramientas que se usarán para la ejecución de pruebas, se encuentran:
+1.  Development of the api-hirers-caja-templates 
 
-* **`Cypress:`** Permite ejecutar las pruebas automatizadas de manera periódica y hacer un registro del histórico en el dashboard de la herramienta.
-* **`Navegador:`** Permite replicar el comportamiento de los usuarios ingresando a la plataforma de OCC Mundial y servirá para las pruebas de funcionalidad, aceptación y regresión.
-* **`Registro del resultado de pruebas:`** Documento para almacenar los resultados de las pruebas efectuados, tanto en ambiente de desarrollo como en ambiente productivo.
+2.  Integrate the API into the application. 
 
-## 🔍Test cases
+3.  Incorporate the template system logic into the vacancy creation screen. 
 
-### Caso de prueba - Administrador de vacantes `PRUEBAS DE REGRESIÓN`
+4.  Implement tracking for Google Tag Manager. 
 
-**Escenario de prueba:** Ambiente productivo, ambiente de desarrollo.
+5.  Document the project. 
 
-**Descripción:** Caso de prueba para verificar el correcto funcionamiento del administrador de vacantes, el cual abarca las siguientes acciones: Carga de vacantes, creación de una nueva vacante desde cero, edición de vacante, compartir, autorepublicar, republicar, desactivar y eliminar.
+6.  Perform end-to-end testing using Cypress, including test design, development, execution, and release. 
 
-**Condiciones anteriores a la prueba**
-* Contar con una cuenta que tenga créditos de publicación de vacantes.
+7.  Test the new system in a development environment. 
 
-**Pasos de la prueba**
+8.  Implement OpenTelemetry for monitoring and visualization on both the front-end and back-end sides in Grafana. 
 
-| Pasos                                                                                             |
-|---------------------------------------------------------------------------------------------------|
-| 1. Se inicia sesión con las credenciales correspondientes a la cuenta con créditos disponibles    |
-| 2. Ingresar a la sección de `VACANTES`                                                            |
-| 3. Verificar la carga correcta de las vacantes `publicadas, inactivas, expiradas y borradores`    |
-| 4. Crear una nueva vacante desde cero, revisando que todos los datos se encuentren vacíos         |
-| 5. Editar la vacante recién creada y publicarla revisando que el id sea el mismo                  |
-| 6. Compartir la vacante publicada, verificando que el link permita ver correctamente la oferta    |
-| 7. Programar la autorepublicación de la vacante recién creada                                     |
-| 8. Republicar una vacante ya existente, siguiendo el proceso de edición y comprobando la vigencia |
-| 9. Desactivar la vacante recién creada, verificando que se encuentre en la sección `Inactivas`    |
-| 10. Eliminar la vacante recién creada, verificando que no aparezca en ninguna de las secciones    |
+9.  Release the system during off-peak hours and conduct testing of changes in the production environment. 
 
-**Criterios de aceptación**
-* Se espera que se cumplan de manera correcta todos los pasos detallados anteriormente.
-* Se espera que la vacante creada en esta prueba ya no exista.
+## Technical Specifications 
 
-### Caso de prueba - Crear nueva vacante en base a una plantilla `PRUEBAS FUNCIONALES Y DE ACEPTACIÓN`
+The following are the software and hardware requirements for the implementation: 
 
-**Escenario de prueba:** Ambiente productivo, ambiente de desarrollo.
+* Node v14.18.0 
 
-**Descripción:** Caso de prueba para verificar la creación de una nueva vacante, en base a una plantilla de las últimas vacantes de la cuenta.
+* Visual Studio Code 
 
-**Condiciones anteriores a la prueba**
-* Contar con una cuenta que tenga créditos de publicación de vacantes.
+* Postman or Insomnia 
 
-**Pasos de la prueba**
+* Access to Cisco VPN in development 
 
-| Pasos                                                                                               |
-|-----------------------------------------------------------------------------------------------------|
-| 1. Se inicia sesión con las credenciales correspondientes a la cuenta con créditos disponibles      |
-| 2. Ingresar a la sección de `VACANTES`                                                              |
-| 3. Dar clic en el botón `CREAR NUEVA VACANTE`                                                       |
-| 4. Verificar que se cargue la interfaz de plantillas con la lista de las últimas vacantes           |
-| 5. Seleccionar una de las plantillas cargadas                                                       |
-| 6. Verificar la pantalla `Nueva publicación` con los datos de la plantilla seleccionada             |
-| 7. Verificar que todos los datos se encuentren llenos y editables (editar al menos uno de ellos)    |
-| 8. Dar clic en el botón `SIGUIENTE`                                                                 |
-| 9. Verificar que todos los datos se encuentren llenos y editables (editar al menos uno de ellos)    |
-| 10. Dar clic en el botón `PUBLICAR`                                                                 |
-| 12. Verificar la redirección a la pantalla de publicación y esperar que se complete el proceso      |
-| 13. Ir al administrador de vacantes                                                                 |
-| 14. Verificar que se encuentre la vacante publicada con un id distinto al de la plantilla           |
+* PC or Laptop with a minimum of 8GB of RAM 
 
-**Criterios de aceptación**
-* Se debe encontrar la vacante creada en base a una plantilla en la sección de vacantes publicadas, con un id diferente al de la plantilla.
-* NOTA: En caso de que no se cuenten con créditos de publicación, se espera que se cree un carrito en base al tipo de vacante y que la vacante se encuentre en la sección de BORRADORES con un id diferente al de la plantilla.
+* Backend-login project to be running for login 
 
-### Pruebas automatizadas `PRUEBAS E2E`
+* OpenTelemetry 
 
-Para consultar la documentación de las pruebas automatizadas, haga [clic aquí](https://backstage.occdeep.io/docs/default/Component/recruiters-integration-test/Casos%20de%20prueba%20-%20CAJA/)
+* Grafana 
 
-## 📘Document test results
+* Cypress 
 
-Para documentar los resultados de las pruebas realizadas, ingresar al siguiente [documento](https://occmundialmx-my.sharepoint.com/:x:/r/personal/aesquivel_occ_com_mx/Documents/Resultados%20de%20pruebas%20-%20PLANTILLAS%20CAJA.xlsx?d=w4c80a3ce456b4be88f29459aacffec11&csf=1&web=1&e=oA5nI8)
+* Drone 
+
+* Go 
+
+* ORM 
+
+* Atomic 
+
+* Gorm 
+
+## Testing and Validation 
+
+The following testing and validation plan will be implemented to ensure the successful implementation of the new vacancy template system: 
+
+* Continuous automated testing to monitor the process of creating new vacancies, both from scratch and through the use of  templates . 
+
+* Regression testing to identify any problems in the vacancy administrator caused by the implementation of the template system. 
+
+* Functional and acceptance testing to verify that new vacancies are created based on a selected template. 
+
+##Training and Support Plan 
+
+The training and support plan aims to equip the product team with the necessary knowledge and tools to support the development team in conducting tests. The plan includes: 
+
+* Thorough review of the template system documentation, including its features and functionalities. 
+
+* Identification and analysis of the use cases of the template system and its integration with the vacancy creation process. 
+
+* Deployment of the system in the production environment during off-peak hours. 
+
+* Practical exercises to create test cases and perform tests using previously published vacancies. 
+
+* Trace monitoring for service requests 
+
+* Evaluation and feedback on the tests conducted by the development and product teams.(1,2) 
+
+## Rollout Plan 
+
+The rollout plan will include:   
+
+* Deploying the new system to the production environment during off-peak hours.  
+
+* Testing and verification of the system will be conducted to ensure a smooth transition.   
+
+* A window will be provided  on AWS to revert to the  previous commit in case of any unexpected issues.   
+
+* If there are no issues, the new system will be left in production and monitored with Cypress.   
+
+* In case of any reports of issues or failures, a rollout to the previous version of recruiters-job-ads will be implemented. 
+
+## Resources Required 
+
+* Thorough documentation of the template system. 
+
+* Access to previously published vacancies. 
+
+* Tools for creating and managing test cases. 
+
+* Test accounts. 
+
+## Conclusion 
+
+The implementation specification document outlines the implementation plan, technical specifications, testing and validation plan, training and support plan, and rollout plan for adding a template system to the vacancy creation process. 
+
+## Appendix  
+
+1.  Test Plan:  <https://github.com/occmundial/recruiters-job-ads/blob/master/docs/TestPlan.md> 
+
+2.  Results Document: <https://github.com/occmundial/recruiters-job-ads/blob/master/docs/Results.md>
