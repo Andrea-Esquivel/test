@@ -13,21 +13,13 @@ The implementation will involve adding a template system to the  vacancy creatio
 The following steps will be taken to implement the proposed solution: 
 
 1.  Development of the api-hirers-caja-templates 
-
 2.  Integrate the API into the application. 
-
 3.  Incorporate the template system logic into the vacancy creation screen. 
-
 4.  Implement tracking for Google Tag Manager. 
-
 5.  Document the project. 
-
 6.  Perform end-to-end testing using Cypress, including test design, development, execution, and release. 
-
 7.  Test the new system in a development environment. 
-
 8.  Implement OpenTelemetry for monitoring and visualization on both the front-end and back-end sides in Grafana. 
-
 9.  Release the system during off-peak hours and conduct testing of changes in the production environment. 
 
 ## Technical Specifications 
